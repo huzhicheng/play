@@ -6,7 +6,7 @@
 
 ## 本仓库内容说明：
 
-[MySQL 数据库读写分离](#sharding-jdbc-write-read-split)
+[MySQL 数据库读写分离](sharding-jdbc-write-read-split)
 对应文章地址：
 
 
