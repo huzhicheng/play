@@ -1,0 +1,45 @@
+server:
+  port: 8082
+
+#mybatis-plus:
+#  mapper-locations: classpath*:/mapper/**/*.xml
+
+
+mybatis:
+  mapper-locations: classpath*:/mapper/**/*.xml
+
+
+
+spring:
+  shardingsphere:
+    datasource:
+      master:
+        type: com.zaxxer.hikari.HikariDataSource
+        driverClassName: com.mysql.cj.jdbc.Driver
+        jdbcUrl: jdbc:mysql://localhost:3306/master-slave?useUnicode=true&characterEncoding=utf8&tinyInt1isBit=false&useSSL=false&serverTimezone=GMT
+        username: root
+        password: P@ssw0rd
+      slave0:
+        type: com.zaxxer.hikari.HikariDataSource
+        driverClassName: com.mysql.cj.jdbc.Driver
+        jdbcUrl: jdbc:mysql://192.168.0.108:3306/master-slave?useUnicode=true&characterEncoding=utf8&tinyInt1isBit=false&useSSL=false&serverTimezone=GMT
+        username: root
+        password: P@ssw0rd
+      names: master,slave0
+
+
+    props:
+      sql.show: true
+    masterslave:
+      load-balance-algorithm-type: round_robin
+    sharding:
+      master-slave-rules:
+        master:
+          master-data-source-name: master
+          slave-data-source-names: slave0
+
+
+
+
+
+
