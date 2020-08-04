@@ -4,23 +4,11 @@ import uuid
 import random
 import time
 from datetime import datetime
-import pymysql as mysql
-
-host = "127.0.0.1"
-port = 3306
-username = "root"
-password = "P@ssw0rd"
-charset = "utf-8"
-db = "mast_slave"
 
 
 class QuickSqlBuilder(object):
     def __init__(self):
         super(QuickSqlBuilder, self).__init__()
-
-    @staticmethod
-    def connect():
-        return mysql.connect(host=host, port=port, user=username, passwd=password, db=db)
 
     def strTimeProp(self, start, end, prop, frmt):
         stime = time.mktime(time.strptime(start, frmt))

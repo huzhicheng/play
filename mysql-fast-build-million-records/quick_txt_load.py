@@ -4,23 +4,11 @@ import uuid
 import random
 import time
 from datetime import datetime
-import pymysql as mysql
-
-host = "127.0.0.1"
-port = 3306
-username = "root"
-password = "P@ssw0rd"
-charset = "utf-8"
-db = "mast_slave"
 
 
 class QuickTxtBuilder(object):
     def __init__(self):
         super(QuickTxtBuilder, self).__init__()
-
-    @staticmethod
-    def connect():
-        return mysql.connect(host=host, port=port, user=username, passwd=password, db=db)
 
     def strTimeProp(self, start, end, prop, frmt):
         stime = time.mktime(time.strptime(start, frmt))
@@ -66,7 +54,6 @@ class QuickTxtBuilder(object):
                             order_row_str += str(order_row) + "\n"
 
                     user_row_str += str(user_row) + "\n"
-
 
                 f.write(user_row_str)
                 f1.write(order_row_str)

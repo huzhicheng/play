@@ -9,7 +9,7 @@ import pymysql as mysql
 host = "127.0.0.1"
 port = 3306
 username = "root"
-password = "P@ssw0rd"
+password = "password"
 charset = "utf-8"
 db = "mast_slave"
 
