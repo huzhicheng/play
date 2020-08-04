@@ -15,4 +15,4 @@
 
 **扫码关注，更多干货。**
 
-![](https://blog-1254563975.cos.ap-beijing.myqcloud.com/blog-images/new-qr.jpg)
+![](https://blog-1254563975.cos.ap-beijing.myqcloud.com/blog-images/new-qr.png)
